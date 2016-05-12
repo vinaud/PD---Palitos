@@ -27,6 +27,7 @@ public class Cliente {
 		
 		System.out.println("Login efetuado com sucesso");
 		
+		//apos logado prosseguir para o jogo
 
 	}
 
