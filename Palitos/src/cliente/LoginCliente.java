@@ -3,6 +3,7 @@ package cliente;
 import java.rmi.Naming;
 
 import servidor.IServicoLogin;
+import utils.Constantes;
 
 public class LoginCliente {
 	
@@ -12,7 +13,7 @@ public class LoginCliente {
 		try {
 			IServicoLogin obj = (IServicoLogin) Naming.lookup("//localhost/login");
 			String result = obj.login(user, senha);
-			if(result.equals("succes"))
+			if(result.equals(Constantes.SUCCES))
 			{
 				return true;
 			}

@@ -3,6 +3,9 @@ package servidor;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+import persistencia.IUserDAO;
+import persistencia.UserDAOMock;
+
 public class ServicoLogin extends UnicastRemoteObject implements IServicoLogin{
 
 	protected ServicoLogin() throws RemoteException {
@@ -14,8 +17,10 @@ public class ServicoLogin extends UnicastRemoteObject implements IServicoLogin{
 
 	@Override
 	public String login(String username, String password) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		IUserDAO dao = new UserDAOMock();
+		
+		String result = dao.login(username, password);
+		return result;
 	}
 
 }
