@@ -24,6 +24,7 @@ public class Cliente {
 			}
 			
 		}while (!logado);
+		scan.close();
 		
 		System.out.println("Login efetuado com sucesso");
 		
